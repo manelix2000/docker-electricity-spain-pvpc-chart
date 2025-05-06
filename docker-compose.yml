@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  pvpc_prices_server:
+    build: ./prices
+    container_name: pvpc-prices-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Europe/Madrid
+      - ESIOS_API_TOKEN=_your_token_here_
