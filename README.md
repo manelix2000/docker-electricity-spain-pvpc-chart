@@ -1,6 +1,6 @@
 # Spain Electricity Price Graph
 
-## Getting started
+## 📘 Introduction
 
 Docker image to broadcast Spain electricity prices as a camara feed to use with [Homebridge Camera FFmpeg](https://github.com/homebridge-plugins/homebridge-camera-ffmpeg) and integrate it into HomeKit.
 
@@ -21,7 +21,7 @@ Prices are loaded from **Red Eléctrica** [ESIOS API](https://api.esios.ree.es/)
 
 
 
-## Project structure
+## ✅ Project structure
 
 ```
 project-root/
@@ -35,10 +35,12 @@ project-root/
     └── images/  # Directory to hold price png's
 ```
 
-- **docker-compose.yml**: docker compose configuration
-- **prices/Dockerfile**: docker build configuration
+## 🔍 Explanation
 
-## Installation
+- ```docker-compose.yml```: docker compose configuration
+- ```prices/Dockerfile```: docker build configuration
+
+## 🛠️ Installation
 
 1.  Copy files into your docker installation 
 2.  Execute
@@ -46,7 +48,7 @@ project-root/
 docker compose up --build -d
 ```
 
-## Test Installation
+## 🧪 Test Installation
 
 Open your favourite browser to:
 1. *Camera feed*
@@ -58,7 +60,7 @@ http://<your-ip>:8080/prices
 http://<your-ip>:8080/prices.png
 ````
 
-## Docker compose environment values
+## 🛠️ Docker compose environment values
 
 Change values as your needs:
 ```
@@ -77,14 +79,14 @@ services:
 
 ```
 
-## Integration with your homebridge-camera-ffmpeg plugin
+## 🛠️ Integration with your homebridge-camera-ffmpeg plugin
 
 Once you have your docker image up, install the homebridge plugin [Homebridge Camera FFmpeg](https://github.com/homebridge-plugins/homebridge-camera-ffmpeg) and configure it as follows:
 
-- **source**: 
-  ```-f mjpeg -i http://<your-ip>:8080/prices```
-- **stillImageSource**: ```-i http://<your-ip>:8080/prices.png```
-- **maxStreams**: ```2```
-- **maxWidth**: ```800```
-- **maxHeight**: ```600```
-- **maxFPS**: ```1```
+- ```source```: 
+  -f mjpeg -i http://<your-ip>:8080/prices
+- ```stillImageSource```: -i http://<your-ip>:8080/prices.png
+- ```maxStreams```: 2
+- ```maxWidth```: 800
+- ```maxHeight```: 600
+- ```maxFPS```: 1
